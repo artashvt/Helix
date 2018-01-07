@@ -11,13 +11,7 @@
 |
 */
 
-use App\Models\Article;
-
 Route::get('/', function (){
 	return redirect('/articles');
 });
 Route::resource('articles', 'ArticleController');
-Route::get('test', function (){
-	$articleId = Article::orderBy('date')->first()->delete();
-	dd($articleId);
-});
